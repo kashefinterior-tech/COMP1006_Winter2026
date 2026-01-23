@@ -1,24 +1,30 @@
 <?php
-// What I learned: Using arrays + loops (and includes) keeps pages easy to update,
-// so I’ll reuse this approach in Course Project Phase One instead of copy/pasting sections.
+// What I learned: Using arrays + loops + a single template page makes the site easier to maintain.
+// I’ll apply this in Course Project Phase One instead of duplicating pages.
 
 require_once __DIR__ . '/header.php';
 
-// Use an associative array so labels + links stay together (more maintainable).
-$navItems = [
-  'Home' => 'index.php',
-  'About' => 'about.php',
-  'Contact' => 'contact.php'
+$pages = [
+  'home' => ['title' => 'Home', 'content' => 'Welcome to my PHP page.'],
+  'about' => ['title' => 'About', 'content' => 'This is the About section.'],
+  'contact' => ['title' => 'Contact', 'content' => 'This is the Contact section.'],
 ];
+
+$current = $_GET['page'] ?? 'home';
+if (!isset($pages[$current])) {
+  $current = 'home';
+}
 ?>
 
 <nav>
   <ul>
-    <?php foreach ($navItems as $label => $url): ?>
-      <li><a href="<?= $url ?>"><?= $label ?></a></li>
+    <?php foreach ($pages as $key => $page): ?>
+      <li><a href="index.php?page=<?= $key ?>"><?= $page['title'] ?></a></li>
     <?php endforeach; ?>
   </ul>
 </nav>
 
-<?php require_once __DIR__ . '/footer.php'; ?>
+<h2><?= $pages[$current]['title'] ?></h2>
+<p><?= $pages[$current]['content'] ?></p>
 
+<?php require_once __DIR__ . '/footer.php'; ?>
