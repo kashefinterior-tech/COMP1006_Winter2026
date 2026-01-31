@@ -8,7 +8,7 @@
     <body>
         <header>
             <h1>
-                <img src="" alt="">
+                <img src="assets/bitumi.png" alt="Bake it Till you make it">
             </h1>
         </header>
 
