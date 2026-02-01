@@ -1,7 +1,7 @@
 <?php require "includes/header.php"; ?>
 
 <?php
-// Get and sanitize form data
+
 $firstName = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_SPECIAL_CHARS);
 $lastName  = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_SPECIAL_CHARS);
 $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -9,10 +9,9 @@ $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $items = $_POST['items'] ?? [];
 $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_SPECIAL_CHARS);
 
-// Validation
 $errors = [];
 
-// Required fields
+
 if (!$firstName) {
   $errors[] = "First name is required.";
 }
@@ -27,7 +26,7 @@ if (!$email) {
   $errors[] = "Please enter a valid email.";
 }
 
-// Check at least one item ordered
+
 $orderedItems = [];
 
 foreach ($items as $item => $qty) {
