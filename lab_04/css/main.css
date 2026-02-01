@@ -1,22 +1,28 @@
 
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  background-color: #fafafa;
-  color: #222;
+  background-color: #fff0f6; 
+  color: #333;
   line-height: 1.6;
 }
+
 
 header,
 main,
 footer {
-  max-width: 700px;
+  max-width: 720px;
   margin: 2rem auto;
   padding: 1.5rem;
   background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid #eee;
+  border-radius: 16px;
+  border: 1px solid #ffd6e7;
 }
+
 
 h1 {
   text-align: center;
@@ -29,23 +35,45 @@ h1 img {
 }
 
 
-
-h2 {
+.nav {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #d63384;
   font-weight: 600;
+  margin: 0 10px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
 }
 
 
+h2 {
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  color: #c2185b;
+}
+
 
 fieldset {
-  border: none;
-  padding: 0;
+  border: 1px solid #ffc2da;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 label {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-weight: 500;
 }
 
@@ -53,59 +81,54 @@ input,
 textarea {
   width: 100%;
   padding: 0.6rem;
-  margin-top: 0.3rem;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
+  margin-top: 0.25rem;
+  border-radius: 8px;
+  border: 1px solid #ffc2da;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #bbb;
+  border-color: #d63384;
 }
 
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ffd6e7;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #fff0f6;
+}
+
 
 button {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 0.75rem;
+  background-color: #d63384;
+  color: white;
   border: none;
-  border-radius: 12px;
-  background-color: #222;
-  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
   font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
 }
 
 button:hover {
-  opacity: 0.9;
+  background-color: #c2185b;
 }
-
-
-
-.message {
-  padding: 1rem;
-  border-radius: 12px;
-  margin-top: 1rem;
-}
-
-.success {
-  background-color: #f2fbf4;
-  border: 1px solid #bfe7c7;
-}
-
-.error {
-  background-color: #fff3f3;
-  border: 1px solid #ffb3b3;
-}
-
 
 
 footer {
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: #777;
 }
+
