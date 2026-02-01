@@ -1,6 +1,6 @@
-  <footer>
-    <p>Bake It Till You Make It</p>
-    <p>COMP1006 – Week 4</p>
-  </footer>
+<footer>
+  <p>&copy; <?php echo date("Y"); ?> Bake It Till You Make It</p>
+</footer>
+
 </body>
 </html>
