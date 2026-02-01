@@ -22,33 +22,43 @@
       <legend>Pick Treats</legend>
 
       <table border="1" cellpadding="8" cellspacing="0">
-        <thead>
-          <tr>
-            <th scope="col">Treat</th>
-            <th scope="col">Qty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Croissant 🥐</th>
-            <td><input type="number" name="items[croissant]" min="0" max="24" value="0"></td>
-          </tr>
-          <tr>
-            <th scope="row">Muffin 🌙</th>
-            <td><input type="number" name="items[muffin]" min="0" max="24" value="0"></td>
-          </tr>
-          <tr>
-            <th scope="row">Eclair 🤔</th>
-            <td><input type="number" name="items[eclair]" min="0" max="24" value="0"></td>
-          </tr>
-        </tbody>
+        <tr>
+          <th>Treat</th>
+          <th>Quantity</th>
+        </tr>
+
+        <tr>
+          <td>Croissant 🥐</td>
+          <td>
+            <input type="number" name="items[croissant]" min="0" max="24" value="0">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Muffin 🌙</td>
+          <td>
+            <input type="number" name="items[muffin]" min="0" max="24" value="0">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Eclair 🤔</td>
+          <td>
+            <input type="number" name="items[eclair]" min="0" max="24" value="0">
+          </td>
+        </tr>
       </table>
     </fieldset>
 
     <fieldset>
       <legend>Notes (optional)</legend>
+
       <label for="comments">Comments</label>
-      <textarea id="comments" name="comments" rows="3" placeholder="Allergies, delivery notes..."></textarea>
+      <textarea
+        id="comments"
+        name="comments"
+        rows="3"
+        placeholder="Allergies, delivery notes..."></textarea>
     </fieldset>
 
     <p>
@@ -59,3 +69,4 @@
 </main>
 
 <?php require "includes/footer.php"; ?>
+

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bake It Till You Make It</title>
-  <link rel="stylesheet" href="../css/main.css">
+  body { background: hotpink !important; }
+
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>

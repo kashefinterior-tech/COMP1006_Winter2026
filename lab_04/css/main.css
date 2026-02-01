@@ -132,3 +132,39 @@ footer {
   color: #777;
 }
 
+
+body {
+  background: #fff0f6 !important;
+}
+
+header, main, footer {
+  border: 1px solid #ffd6e7 !important;
+}
+
+h2 {
+  color: #d63384 !important;
+}
+
+button {
+  background: #ff4fa3 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+
+nav a, .nav a {
+  color: #d63384 !important;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0 10px;
+}
+nav a:hover, .nav a:hover {
+  text-decoration: underline;
+}
+
+
