@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bake it Till you make it</title>
+    <base href="/COMP1006_Winter2026/lab04/">
     <!-- <link rel="stylesheet" href="../css/main.css"> -->
      <link rel="stylesheet" href="/COMP1006_Winter2026/lab%2004/css/main.css">
 
