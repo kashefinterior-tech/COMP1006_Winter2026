@@ -89,6 +89,48 @@ if (!empty($errors)) {
 INSERT THE ORDER USING A PREPARED STATEMENT
 */
 
+//set up the query 
+$sql="INSERT INTO orders(first_name, last_name, phone, address, email, chaos_croissant, midnight_muffin, extintial_eclair, procrastion_cookie, final_week_brownie, victory_cinnomon_roll, comments) values (:first_name, :last_name, :phone , :address, :email, :chaos_croissant,:midnight_muffin, :extintial_eclair, :procrastion_cookie, :final_week_brownie, :victory_cinnomon_roll, :comments";
+
+//prepare the query 
+
+$stmt=$pdo->prepare($sql);
+
+$chaosCroissant=$itemsOrdered['chaos_croissant']??0;
+$midnightMuffin=$itemsOrdered['midnight_muffin']??0;
+$extintialEclair=$itemsOrdered['extintial_eclair']??0;
+$procrastionCookie=$itemsOrdered['procrastion_cookie']??0;
+$finalWeekBrownie=$itemsOrdered['final_week_brownie']??0;
+$victoryCinnomonRoll=$itemsOrdered['victory_cinnomon_roll']??0;
+
+
+
+
+
+
+$stm->bindPram(':$first_name', $firstName);
+$stm->bindPram(':$last_name', $lastName);
+$stm->bindPram(':phone', $phone);
+$stm->bindPram(':address', $address);
+$stm->bindPram(':$email', $email);
+$stm->bindPram(':$', $email);
+$stm->bindPram(':comments', $comments);
+
+
+$stm->bindPram(':chaos_croissant', $chaosCroissant);
+$stm->bindPram(':midnight_muffin', $midnightMuffin);
+$stm->bindPram(':extintial_eclair', $extintialEclair);
+$stm->bindPram(':procrastion_cookie', $procrastionCookie);
+$stm->bindPram(':final_week_brownie', $finalWeekBrownie);
+$stm->bindPram(':victory_cinnomon_roll', $victoryCinnomonRoll);
+
+
+//execute -i.e run the query 
+$stm->execute();
+
+
+//pull from $itemOrdered and store in variables 
+
 ?>
 
 <!--Confirmation Message -->
