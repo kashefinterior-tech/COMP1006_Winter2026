@@ -1,7 +1,12 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=YOUR_DB_NAME;charset=utf8mb4";
-$user = "root";
-$pass = "YOUR_PASSWORD";
+// includes/db.php
+
+$host = "localhost";
+$dbname = "YOUR_DB_NAME";
+$username = "root";
+$password = ""; // or your password
+
+$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
 
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -9,7 +14,7 @@ $options = [
 ];
 
 try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
+  $pdo = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
   die("Database connection failed.");
 }
