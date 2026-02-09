@@ -1,38 +1,45 @@
 <?php
 require "includes/db.php";
 
-// prepared SELECT 
-$sql = "SELECT id, email, first_name, created_at
-        FROM subscribers
-        ORDER BY created_at DESC";
+// PDO prepared SELECT
+$sql = "SELECT id, email FROM subscribers ORDER BY id DESC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $subscribers = $stmt->fetchAll();
 ?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscribers</title>
+</head>
+<body>
 
-<h2>Subscriber List</h2>
+  <h1>Subscriber List</h1>
 
-<?php if (count($subscribers) === 0): ?>
-  <p>No subscribers yet.</p>
-<?php else: ?>
-  <table border="1" cellpadding="8">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Email</th>
-        <th>First Name</th>
-        <th>Joined</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($subscribers as $s): ?>
+  <?php if (count($subscribers) === 0): ?>
+    <p>No subscribers yet.</p>
+  <?php else: ?>
+    <table border="1" cellpadding="8">
+      <thead>
         <tr>
-          <td><?= htmlspecialchars($s["id"]) ?></td>
-          <td><?= htmlspecialchars($s["email"]) ?></td>
-          <td><?= htmlspecialchars($s["first_name"] ?? "") ?></td>
-          <td><?= htmlspecialchars($s["created_at"]) ?></td>
+          <th>ID</th>
+          <th>Email</th>
         </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-<?php endif; ?>
+      </thead>
+      <tbody>
+        <?php foreach ($subscribers as $s): ?>
+          <tr>
+            <td><?= htmlspecialchars($s["id"]) ?></td>
+            <td><?= htmlspecialchars($s["email"]) ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  <?php endif; ?>
+
+  <p><a href="index.php">Back to form</a></p>
+
+</body>
+</html>
