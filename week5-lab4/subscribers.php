@@ -1,7 +1,7 @@
 <?php
 require "includes/db.php";
 
-// PDO prepared SELECT
+// PDO prepared SELECT 
 $sql = "SELECT id, email FROM subscribers ORDER BY id DESC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
