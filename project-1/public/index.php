@@ -1,5 +1,10 @@
 <?php
+
+$pageTitle = "All Posts";
 require_once __DIR__ . '/../includes/config.php';
+require_once __DIR__ . '/../includes/config.php';
+require_once __DIR__ . '/../includes/header.php';
+
 ?>
 <!doctype html>
 <html lang="en">
